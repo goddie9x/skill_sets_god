@@ -6,6 +6,11 @@
       "grants": ["safe-commands"]
     },
     {
+      "id": "safe-test",
+      "description": "Read test files; run them if they look safe. Install prints a warning.",
+      "grants": ["safe-tests"]
+    },
+    {
       "id": "review",
       "description": "Review the diff before commit or push.",
       "grants": ["auto-review"]
@@ -27,8 +32,8 @@
     },
     {
       "id": "autopilot",
-      "description": "All rights: safe-run + ship.",
-      "grants": ["safe-commands", "auto-review", "auto-commit", "auto-push"]
+      "description": "All rights: safe-run + safe-test + ship. Install warns about safe-test.",
+      "grants": ["safe-commands", "safe-tests", "auto-review", "auto-commit", "auto-push"]
     }
   ]
 }

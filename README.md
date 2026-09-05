@@ -29,6 +29,7 @@ Open a new chat after install.
 .\install.ps1 -List
 .\install.ps1 -Bundle basic -Policy ship
 .\install.ps1 -Policy autopilot
+.\install.ps1 -Policy safe-test
 .\install.ps1 -Bundle none -Skill clean-programming
 ```
 
@@ -37,6 +38,7 @@ Open a new chat after install.
 ./install.sh --list
 ./install.sh --bundle basic --policy ship
 ./install.sh --policy autopilot
+./install.sh --policy safe-test
 ./install.sh --bundle none --skill clean-programming
 ```
 
@@ -58,11 +60,12 @@ After the first clone:
 | Id | Grants |
 | --- | --- |
 | `safe-run` | safe-commands (default) |
+| `safe-test` | safe-tests — prints a **WARNING** at install |
 | `review` | auto-review |
 | `commit` | auto-commit |
 | `push` | auto-push |
 | `ship` | review + commit + push |
-| `autopilot` | safe-run + ship |
+| `autopilot` | safe-run + safe-test + ship — warns about safe-test |
 
 Combine clusters: `-Policy safe-run,ship` or `--policy safe-run --policy ship`.
 

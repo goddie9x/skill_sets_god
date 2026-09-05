@@ -17,6 +17,7 @@ Examples:
   ./install.sh
   ./install.sh --bundle basic --policy ship
   ./install.sh --policy autopilot
+  ./install.sh --policy safe-test
   ./install.sh --bundle none --skill clean-programming
   ./install.sh --list
   ./install.sh --help

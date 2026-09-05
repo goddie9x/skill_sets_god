@@ -8,6 +8,16 @@ Safe (in-project, non-destructive): status, diff, log, search, format, lint, typ
 
 Then run it. Do not ask. If it fails, fix and rerun. Do not ask to rerun.
 
+## safe-tests
+
+Before running a test command, read the test files it will execute.
+
+Safe: in-project unit, widget, integration, or e2e that assert behavior. No prod writes, no disk wipe, no machine-wide change, no secret exfil.
+
+If the files look safe, run the test command. Do not ask.
+
+If any file looks unsafe, do not run it. Ask once and name the risk.
+
 ## auto-review
 
 Before commit or push, read the diff yourself.

@@ -45,6 +45,7 @@ Active grants: $($grants -join ', ')
 Follow the command-rights skill and [grants.md](grants.md).
 
 $(if ($grants -contains 'safe-commands') { '- safe-commands: classify, then run safe in-project commands. Do not ask.' })
+$(if ($grants -contains 'safe-tests') { '- safe-tests: read test files; run them if they look safe. Do not ask.' })
 $(if ($grants -contains 'auto-review') { '- auto-review: read the diff before commit or push. Fix problems, then continue.' })
 $(if ($grants -contains 'auto-commit') { '- auto-commit: commit when the task is done. No secret files.' })
 $(if ($grants -contains 'auto-push') { '- auto-push: push the current branch after a successful commit. No force push.' })
@@ -56,3 +57,4 @@ $rulesDir = Join-Path $HOME ".cursor/rules"
 New-Item -ItemType Directory -Force -Path $rulesDir | Out-Null
 Set-Content -Encoding utf8 (Join-Path $rulesDir "command-rights.mdc") $rule.Trim()
 Write-Host "ok policy $($PolicyIds -join ',') grants $($grants -join ',')"
+& (Join-Path $SourceRoot "scripts/emit-grant-warnings.ps1") -SourceRoot $SourceRoot -Grants @($grants)

@@ -31,6 +31,7 @@ Examples:
   .\install.ps1
   .\install.ps1 -Bundle basic -Policy ship
   .\install.ps1 -Policy autopilot
+  .\install.ps1 -Policy safe-test
   .\install.ps1 -Bundle none -Skill clean-programming
   .\install.ps1 -List
   .\install.ps1 -Help

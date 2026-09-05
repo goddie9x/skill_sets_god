@@ -1,0 +1,8 @@
+{
+  "safe-tests": [
+    "WARNING: grant safe-tests is ON.",
+    "The agent will read test files and run them without asking if the content looks safe.",
+    "It must skip tests that wipe data, hit prod, or change the machine outside the repo.",
+    "You turned this on. Only use it on repos you trust."
+  ]
+}

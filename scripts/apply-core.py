@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import argparse
 import json
-import os
 import shutil
 from pathlib import Path
 
@@ -97,6 +96,7 @@ def apply(root: Path, bundle: str, policies: list[str], extra: list[str]) -> Non
     ]
     labels = {
         "safe-commands": "classify, then run safe in-project commands. Do not ask.",
+        "safe-tests": "read test files; run them if they look safe. Do not ask.",
         "auto-review": "read the diff before commit or push. Fix problems, then continue.",
         "auto-commit": "commit when the task is done. No secret files.",
         "auto-push": "push the current branch after a successful commit. No force push.",
@@ -109,6 +109,16 @@ def apply(root: Path, bundle: str, policies: list[str], extra: list[str]) -> Non
     rule_path.parent.mkdir(parents=True, exist_ok=True)
     rule_path.write_text("\n".join(lines), encoding="utf-8")
     print(f"ok policy {','.join(policies)} grants {', '.join(grants)}")
+    warn_path = root / "install" / "warnings.json"
+    if warn_path.is_file():
+        warnings = json.loads(warn_path.read_text(encoding="utf-8"))
+        for grant in grants:
+            lines = warnings.get(grant) or []
+            if lines:
+                print()
+                for line in lines:
+                    print(line)
+                print()
 
 
 def split_csv(values: list[str]) -> list[str]:
