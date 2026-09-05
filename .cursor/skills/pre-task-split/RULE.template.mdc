@@ -1,0 +1,16 @@
+---
+description: Before a new task, list only accuracy / judgment / missing, then stop.
+alwaysApply: true
+---
+
+Before starting a new task, split it into three lists only, then stop:
+
+1. Accuracy — numbers, counts, compares, parsing, format checks. Later write and run code; never mental math.
+2. Judgment — interpretation, explanation, writing. Handle yourself.
+3. Missing — list gaps and ask. Write `None` if complete.
+
+Do not begin the work until the user confirms or fills the gaps.
+
+Skip the list when the user is continuing an already-split task.
+
+Read `~/.cursor/skills/pre-task-split/SKILL.md` (or `.cursor/skills/pre-task-split/SKILL.md`).
