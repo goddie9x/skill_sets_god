@@ -1,0 +1,31 @@
+{
+  "targets": [
+    {
+      "id": "cursor",
+      "always": true,
+      "detect": [".cursor"],
+      "skillsDir": ".cursor/skills",
+      "rulesDir": ".cursor/rules"
+    },
+    {
+      "id": "claude",
+      "detect": [".claude"],
+      "skillsDir": ".claude/skills"
+    },
+    {
+      "id": "codex",
+      "detect": [".agents", ".codex"],
+      "skillsDir": ".agents/skills"
+    },
+    {
+      "id": "copilot",
+      "detect": [".copilot"],
+      "skillsDir": ".copilot/skills"
+    },
+    {
+      "id": "gemini",
+      "detect": [".gemini"],
+      "skillsDir": ".gemini/skills"
+    }
+  ]
+}
