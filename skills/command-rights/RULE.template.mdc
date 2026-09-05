@@ -1,0 +1,10 @@
+---
+description: Honor installed command-rights grants (safe-run, review, commit, push).
+alwaysApply: true
+---
+
+Read `$HOME/.skill-sets-god/config.json` and follow `command-rights`.
+
+Default if that file is missing: `safe-commands` only.
+
+No force-push to main/master. No secret commits. Ask before unsafe commands.

@@ -1,0 +1,14 @@
+{
+  "bundles": [
+    {
+      "id": "basic",
+      "description": "Default set: clean programming, pre-task split, command rights",
+      "skills": ["clean-programming", "pre-task-split", "command-rights"]
+    },
+    {
+      "id": "none",
+      "description": "No bundle. Use with -Skill to pick folders yourself",
+      "skills": []
+    }
+  ]
+}

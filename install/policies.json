@@ -1,0 +1,34 @@
+{
+  "policies": [
+    {
+      "id": "safe-run",
+      "description": "Check then run safe in-project commands. Do not ask.",
+      "grants": ["safe-commands"]
+    },
+    {
+      "id": "review",
+      "description": "Review the diff before commit or push.",
+      "grants": ["auto-review"]
+    },
+    {
+      "id": "commit",
+      "description": "Create a git commit when the work is ready to save.",
+      "grants": ["auto-commit"]
+    },
+    {
+      "id": "push",
+      "description": "Push the current branch after a successful commit. No force push.",
+      "grants": ["auto-push"]
+    },
+    {
+      "id": "ship",
+      "description": "Review, commit, and push as one cluster.",
+      "grants": ["auto-review", "auto-commit", "auto-push"]
+    },
+    {
+      "id": "autopilot",
+      "description": "All rights: safe-run + ship.",
+      "grants": ["safe-commands", "auto-review", "auto-commit", "auto-push"]
+    }
+  ]
+}
