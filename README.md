@@ -7,6 +7,7 @@ Portable AI skills. Copy a folder into a project or into your user skills direct
 | Skill | Use when |
 | --- | --- |
 | [clean-programming](skills/clean-programming/SKILL.md) | Writing, reviewing, or refactoring code. Enforces clean, self-documenting, modular English code, runs safe in-project commands without asking, and keeps replies on the main problem. |
+| [pre-task-split](skills/pre-task-split/SKILL.md) | Start of a new task. List only accuracy (code-verified), judgment, and missing facts — then stop until the user confirms. |
 
 ## Install `clean-programming`
 
@@ -25,6 +26,7 @@ Create `.cursor/rules` first if needed. The rule makes the skill apply in every 
 ```powershell
 New-Item -ItemType Directory -Force -Path "$HOME/.cursor/skills" | Out-Null
 Copy-Item -Recurse -Force skills/clean-programming "$HOME/.cursor/skills/clean-programming"
+Copy-Item -Recurse -Force skills/pre-task-split "$HOME/.cursor/skills/pre-task-split"
 ```
 
 Do not copy into `~/.cursor/skills-cursor/` — that folder is reserved.
