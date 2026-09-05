@@ -6,7 +6,7 @@ Portable AI skills. Copy a folder into a project or into your user skills direct
 
 | Skill | Use when |
 | --- | --- |
-| [clean-programming](skills/clean-programming/SKILL.md) | Writing, reviewing, or refactoring code. Enforces clean, self-documenting, modular English code and runs safe in-project commands without asking. |
+| [clean-programming](skills/clean-programming/SKILL.md) | Writing, reviewing, or refactoring code. Enforces clean, self-documenting, modular English code, runs safe in-project commands without asking, and keeps replies on the main problem. |
 
 ## Install `clean-programming`
 

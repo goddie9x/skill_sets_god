@@ -1,5 +1,5 @@
 ---
-description: Clean, self-documenting, modular English code; run safe project commands without asking.
+description: Clean, self-documenting, modular English code; run safe project commands without asking; answer only the main problem.
 alwaysApply: true
 ---
 
@@ -10,5 +10,6 @@ Follow the clean-programming skill on every coding task:
 3. Run every safe command in this project without asking.
 4. Keep files, classes, and functions small; split before they grow.
 5. English for identifiers, comments, commits, and docs.
+6. Drop extra talk in replies; solve only the main problem.
 
 Read the skill at `.cursor/skills/clean-programming/SKILL.md` (or `~/.cursor/skills/clean-programming/SKILL.md`) and apply its linked rules.

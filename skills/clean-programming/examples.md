@@ -52,6 +52,12 @@ Do:
 
 Do not: ask "Want me to run the tests?"
 
+## Focused replies
+
+Bad: recap the ask, list unused options, then the fix, then "I can also…".
+
+Good: the fix, the files, whether checks passed.
+
 ## English identifiers
 
 Bad: `tinhTongTien()`, `nguoiDung`, `hoaDon.dart`.

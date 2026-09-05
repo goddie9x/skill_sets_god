@@ -1,23 +1,24 @@
 ---
 name: clean-programming
 description: >-
-  Enforce clean, self-documenting, modular English code and run safe
-  in-project commands without asking. Use when writing, reviewing,
-  refactoring, generating, or fixing any code; when splitting files,
-  classes, or functions; when deciding whether to comment; when running
-  tests, lint, format, typecheck, build, git, or other local project
-  commands.
+  Enforce clean, self-documenting, modular English code, run safe
+  in-project commands without asking, and answer only the main problem.
+  Use when writing, reviewing, refactoring, generating, or fixing any
+  code; when splitting files, classes, or functions; when deciding
+  whether to comment; when running tests, lint, format, typecheck,
+  build, git, or other local project commands; when drafting any reply.
 ---
 
 # Clean Programming
 
-Apply these five rules on every coding task in the current project.
+Apply these rules on every coding task in the current project.
 
 1. **Clean code** — intent lives in names and structure. See [clean-code.md](clean-code.md).
 2. **Self-documenting** — almost no comments; the code explains itself. See [self-documenting.md](self-documenting.md).
 3. **Safe commands run now** — never ask to run a safe command in this project. See [safe-commands.md](safe-commands.md).
 4. **Small units** — split files, classes, and functions early. See [modular-size.md](modular-size.md).
 5. **English** — all code artifacts are English. See [language.md](language.md).
+6. **Focused replies** — drop extra talk; solve only the main problem. See [focused-replies.md](focused-replies.md).
 
 If a project convention is stricter, follow the project. If it is looser, follow this skill.
 
@@ -35,6 +36,7 @@ If a project convention is stricter, follow the project. If it is looser, follow
 - Do not add comments that restate what the code does.
 - Do not ask permission for commands listed as safe.
 - Do not use non-English identifiers, comments, commits, or docs.
+- Do not pad replies with recap, options, or process the user did not need.
 
 ## Examples
 
