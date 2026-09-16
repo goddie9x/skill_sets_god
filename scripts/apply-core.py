@@ -39,6 +39,19 @@ def grants_for(root: Path, policy_ids: list[str]) -> list[str]:
     return grants
 
 
+ALLOWED_GEMINI = {".md", ".py", ".txt", ".csv"}
+
+
+def copy_allowed_tree(src: Path, dest: Path) -> None:
+    dest.mkdir(parents=True, exist_ok=True)
+    for item in src.iterdir():
+        if item.is_dir():
+            copy_allowed_tree(item, dest / item.name)
+            continue
+        if item.suffix.lower() in ALLOWED_GEMINI:
+            shutil.copy2(item, dest / item.name)
+
+
 def sync_gemini_skill(src: Path, dest: Path) -> None:
     skill_md = src / "SKILL.md"
     if not skill_md.is_file():
@@ -50,13 +63,10 @@ def sync_gemini_skill(src: Path, dest: Path) -> None:
             dest.unlink()
     dest.mkdir(parents=True, exist_ok=True)
     shutil.copy2(skill_md, dest / "SKILL.md")
-    refs = src / "references"
-    if refs.is_dir():
-        shutil.copytree(refs, dest / "references")
-    for folder in ("scripts", "assets"):
+    for folder in ("references", "scripts", "assets"):
         sub = src / folder
         if sub.is_dir():
-            shutil.copytree(sub, dest / folder)
+            copy_allowed_tree(sub, dest / folder)
 
 
 def link_dir(src: Path, dest: Path) -> str:
@@ -91,7 +101,9 @@ def apply(root: Path, bundle: str, policies: list[str], extra: list[str]) -> Non
                 print(f"ok {target['id']} {name} (gemini-pack)")
             else:
                 print(f"ok {target['id']} {name} ({link_dir(src, dest)})")
-            rule_src = src / "RULE.template.mdc"
+            rule_src = root / "install" / "cursor-rules" / f"{name}.mdc"
+            if not rule_src.is_file():
+                rule_src = src / "RULE.template.mdc"
             rules_dir = target.get("rulesDir")
             if rules_dir and rule_src.is_file():
                 rule_dir = home / rules_dir

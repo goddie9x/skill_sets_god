@@ -50,7 +50,10 @@ foreach ($target in $spec.targets) {
             $mode = Set-SkillLink $src $dest
             Write-Host "ok $($target.id) $name ($mode)"
         }
-        $ruleSrc = Join-Path $src "RULE.template.mdc"
+        $ruleSrc = Join-Path $SourceRoot "install/cursor-rules/$name.mdc"
+        if (-not (Test-Path $ruleSrc)) {
+            $ruleSrc = Join-Path $src "RULE.template.mdc"
+        }
         if ($target.rulesDir -and (Test-Path $ruleSrc)) {
             $rulesDir = Join-Path $HOME $target.rulesDir
             New-Item -ItemType Directory -Force -Path $rulesDir | Out-Null

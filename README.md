@@ -73,30 +73,24 @@ Config is written to `~/.skill-sets-god/config.json`. Cursor also gets `~/.curso
 
 ## Gemini upload
 
-Gemini rejects **`.mdc`** (Cursor rule files) and folders where **`SKILL.md` is not at the top** of the upload.
+Gemini web only accepts **`.md` `.py` `.txt` `.csv`**.
 
-**Do not upload** the whole repo, `skills/`, or a zip of many skills. Upload **one** folder whose root contains `SKILL.md`.
-
-Build clean folders (no `.mdc`):
+Cursor rules (`.mdc`) live in `install/cursor-rules/` — **not** inside `skills/`. Local Cursor install still applies those rules normally.
 
 ```powershell
 .\scripts\export-gemini.ps1
 ```
 
-Then upload e.g. `dist/gemini-upload/clean-programming` — not `dist/gemini-upload` and not `skills/clean-programming` from the repo if it still has `RULE.template.mdc`.
+Upload **one** of:
 
-Layout:
+- `dist/gemini-upload/clean-programming` (folder), or
+- `dist/gemini-upload/clean-programming.zip`
 
-```text
-clean-programming/
-├── SKILL.md
-└── references/
-    └── *.md
-```
+Do **not** upload the parent `dist/gemini-upload` or the whole repo.
 
-`name:` in frontmatter must stay **kebab-case** (`clean-programming`). Installer uses `packMode: gemini` so `~/.gemini/skills/` gets the same layout.
+`name:` in frontmatter stays **kebab-case**. Installer `packMode: gemini` writes the same layout to `~/.gemini/skills/`.
 
-CLI alternative: `gemini skills install https://github.com/goddie9x/skill_sets_god.git --path skills/clean-programming`
+CLI: `gemini skills install https://github.com/goddie9x/skill_sets_god.git --path skills/clean-programming`
 
 ## Add a tool later
 

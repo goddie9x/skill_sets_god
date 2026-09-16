@@ -17,10 +17,24 @@ Get-ChildItem $skillsRoot -Directory | ForEach-Object {
     if (-not (Test-Path (Join-Path $_.FullName "SKILL.md"))) { return }
     $dest = Join-Path $OutDir $_.Name
     & $sync -SourceSkillDir $_.FullName -DestSkillDir $dest
+
+    $zip = Join-Path $OutDir "$($_.Name).zip"
+    if (Test-Path $zip) { Remove-Item -Force $zip }
+    Compress-Archive -Path (Join-Path $dest "*") -DestinationPath $zip -Force
+
+    $bad = Get-ChildItem $dest -Recurse -File -Force |
+        Where-Object { @(".md", ".py", ".txt", ".csv") -notcontains $_.Extension.ToLowerInvariant() }
+    if ($bad) {
+        throw "Export still has unsupported files: $($bad.FullName -join ', ')"
+    }
+
     Write-Host "ok export $($_.Name) -> $dest"
+    Write-Host "ok zip $($_.Name) -> $zip"
 }
 
 Write-Host ""
-Write-Host "Upload ONE folder from: $OutDir"
-Write-Host "Example: dist/gemini-upload/clean-programming (SKILL.md at the top of that folder)."
-Write-Host "Do not upload the whole repo or the skills/ parent folder."
+Write-Host "Gemini web only allows .md .py .txt .csv"
+Write-Host "Upload ONE skill folder OR its .zip from: $OutDir"
+Write-Host "Example folder: $OutDir\clean-programming"
+Write-Host "Example zip:    $OutDir\clean-programming.zip"
+Write-Host "Do NOT upload skills\ from the repo root as a multi-skill parent."
