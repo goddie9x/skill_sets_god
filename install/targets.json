@@ -25,7 +25,8 @@
     {
       "id": "gemini",
       "detect": [".gemini"],
-      "skillsDir": ".gemini/skills"
+      "skillsDir": ".gemini/skills",
+      "packMode": "gemini"
     }
   ]
 }

@@ -42,7 +42,7 @@ alwaysApply: true
 Active policies: $($PolicyIds -join ', ')
 Active grants: $($grants -join ', ')
 
-Follow the command-rights skill and [grants.md](grants.md).
+Follow the command-rights skill and references/grants.md.
 
 $(if ($grants -contains 'safe-commands') { '- safe-commands: classify, then run safe in-project commands. Do not ask.' })
 $(if ($grants -contains 'safe-tests') { '- safe-tests: read test files; run them if they look safe. Do not ask.' })

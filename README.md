@@ -71,6 +71,33 @@ Combine clusters: `-Policy safe-run,ship` or `--policy safe-run --policy ship`.
 
 Config is written to `~/.skill-sets-god/config.json`. Cursor also gets `~/.cursor/rules/command-rights.mdc`.
 
+## Gemini upload
+
+Gemini rejects **`.mdc`** (Cursor rule files) and folders where **`SKILL.md` is not at the top** of the upload.
+
+**Do not upload** the whole repo, `skills/`, or a zip of many skills. Upload **one** folder whose root contains `SKILL.md`.
+
+Build clean folders (no `.mdc`):
+
+```powershell
+.\scripts\export-gemini.ps1
+```
+
+Then upload e.g. `dist/gemini-upload/clean-programming` — not `dist/gemini-upload` and not `skills/clean-programming` from the repo if it still has `RULE.template.mdc`.
+
+Layout:
+
+```text
+clean-programming/
+├── SKILL.md
+└── references/
+    └── *.md
+```
+
+`name:` in frontmatter must stay **kebab-case** (`clean-programming`). Installer uses `packMode: gemini` so `~/.gemini/skills/` gets the same layout.
+
+CLI alternative: `gemini skills install https://github.com/goddie9x/skill_sets_god.git --path skills/clean-programming`
+
 ## Add a tool later
 
 Add one object to `install/targets.json`, then rerun install.

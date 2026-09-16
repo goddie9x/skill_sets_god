@@ -39,6 +39,26 @@ def grants_for(root: Path, policy_ids: list[str]) -> list[str]:
     return grants
 
 
+def sync_gemini_skill(src: Path, dest: Path) -> None:
+    skill_md = src / "SKILL.md"
+    if not skill_md.is_file():
+        raise SystemExit(f"Missing SKILL.md in {src}")
+    if dest.exists() or dest.is_symlink():
+        if dest.is_dir() and not dest.is_symlink():
+            shutil.rmtree(dest)
+        else:
+            dest.unlink()
+    dest.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(skill_md, dest / "SKILL.md")
+    refs = src / "references"
+    if refs.is_dir():
+        shutil.copytree(refs, dest / "references")
+    for folder in ("scripts", "assets"):
+        sub = src / folder
+        if sub.is_dir():
+            shutil.copytree(sub, dest / folder)
+
+
 def link_dir(src: Path, dest: Path) -> str:
     dest.parent.mkdir(parents=True, exist_ok=True)
     if dest.exists() or dest.is_symlink():
@@ -66,7 +86,11 @@ def apply(root: Path, bundle: str, policies: list[str], extra: list[str]) -> Non
         for name in names:
             src = root / "skills" / name
             dest = home / target["skillsDir"] / name
-            print(f"ok {target['id']} {name} ({link_dir(src, dest)})")
+            if target.get("packMode") == "gemini":
+                sync_gemini_skill(src, dest)
+                print(f"ok {target['id']} {name} (gemini-pack)")
+            else:
+                print(f"ok {target['id']} {name} ({link_dir(src, dest)})")
             rule_src = src / "RULE.template.mdc"
             rules_dir = target.get("rulesDir")
             if rules_dir and rule_src.is_file():

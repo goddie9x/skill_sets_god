@@ -11,7 +11,7 @@ description: >-
 
 Read `$HOME/.skill-sets-god/config.json`. Only the listed `grants` are on.
 
-Grant details: [grants.md](grants.md).
+Grant details: [grants.md](references/grants.md).
 
 If that file is missing, treat grants as `safe-commands` only.
 

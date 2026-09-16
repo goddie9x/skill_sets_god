@@ -43,8 +43,13 @@ foreach ($target in $spec.targets) {
     foreach ($name in $names) {
         $src = Join-Path $skillsRoot $name
         $dest = Join-Path $HOME (Join-Path $target.skillsDir $name)
-        $mode = Set-SkillLink $src $dest
-        Write-Host "ok $($target.id) $name ($mode)"
+        if ($target.packMode -eq "gemini") {
+            & (Join-Path $SourceRoot "scripts/sync-gemini-skill.ps1") -SourceSkillDir $src -DestSkillDir $dest
+            Write-Host "ok $($target.id) $name (gemini-pack)"
+        } else {
+            $mode = Set-SkillLink $src $dest
+            Write-Host "ok $($target.id) $name ($mode)"
+        }
         $ruleSrc = Join-Path $src "RULE.template.mdc"
         if ($target.rulesDir -and (Test-Path $ruleSrc)) {
             $rulesDir = Join-Path $HOME $target.rulesDir
