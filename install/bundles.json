@@ -2,8 +2,8 @@
   "bundles": [
     {
       "id": "basic",
-      "description": "Default set: clean programming, pre-task split, command rights",
-      "skills": ["clean-programming", "pre-task-split", "command-rights"]
+      "description": "Default set: clean programming, pre-task split, command rights, doc prerequisites",
+      "skills": ["clean-programming", "pre-task-split", "command-rights", "doc-prerequisites"]
     },
     {
       "id": "none",

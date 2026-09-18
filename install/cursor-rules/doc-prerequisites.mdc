@@ -1,0 +1,12 @@
+---
+description: When writing user-facing docs, include overview, input validation, and create-if-missing refs.
+alwaysApply: true
+---
+
+When writing or editing documentation or user-facing help text, follow `doc-prerequisites`:
+
+1. Basic overview of the feature.
+2. Input validation / prerequisites (required vs optional).
+3. If a required item is missing, where to create it — with a link/ref to that section.
+
+Read `~/.cursor/skills/doc-prerequisites/SKILL.md` (or `.cursor/skills/doc-prerequisites/SKILL.md`).
