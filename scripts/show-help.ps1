@@ -22,7 +22,7 @@ if (-not $ListOnly) {
 Skill Sets installer
 
 Usage:
-  .\install.ps1 [-Bundle <id>] [-Policy <id>[,<id>...]] [-Skill <name>...] [-List] [-Help]
+  .\install.ps1 [-Bundle <id>] [-Policy <id>[,<id>...]] [-Skill <name>...] [-Ignore] [-Path <dir>] [-List] [-Help]
   ./install.sh [--bundle <id>] [--policy <id>[,<id>...]] [--skill <name>] [--list] [--help]
 
 Default: -Bundle basic -Policy safe-run
@@ -33,6 +33,8 @@ Examples:
   .\install.ps1 -Policy autopilot
   .\install.ps1 -Policy safe-test
   .\install.ps1 -Bundle none -Skill clean-programming
+  .\install.ps1 -Ignore
+  .\install.ps1 -Ignore -Path E:\my-app
   .\install.ps1 -List
   .\install.ps1 -Help
 

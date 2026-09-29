@@ -30,6 +30,8 @@ Open a new chat after install.
 .\install.ps1 -Bundle basic -Policy ship
 .\install.ps1 -Policy autopilot
 .\install.ps1 -Policy safe-test
+.\install.ps1 -Ignore
+.\install.ps1 -Ignore -Path E:\my-app
 .\install.ps1 -Bundle none -Skill clean-programming
 ```
 
@@ -39,6 +41,8 @@ Open a new chat after install.
 ./install.sh --bundle basic --policy ship
 ./install.sh --policy autopilot
 ./install.sh --policy safe-test
+./install.sh --ignore
+./install.sh --ignore --path /path/to/app
 ./install.sh --bundle none --skill clean-programming
 ```
 
@@ -70,6 +74,19 @@ After the first clone:
 Combine clusters: `-Policy safe-run,ship` or `--policy safe-run --policy ship`.
 
 Config is written to `~/.skill-sets-god/config.json`. Cursor also gets `~/.cursor/rules/command-rights.mdc`.
+
+## AI ignore
+
+Does not edit `.gitignore`.
+
+```powershell
+.\install.ps1 -Ignore
+.\install.ps1 -Ignore -Path E:\my-app
+```
+
+`-Ignore` writes `.cursorignore`, `.geminiignore`, and `.antigravityignore` in the target directory (current directory if `-Path` is omitted). Patterns: libraries, build output, caches. Re-run replaces the `skill-sets-god` block and keeps the rest of the file.
+
+Cursor also gets those patterns in user setting `cursor.general.globalCursorIgnoreList`, so they apply in every project. Gemini and Antigravity only read the project ignore file.
 
 ## Gemini upload
 

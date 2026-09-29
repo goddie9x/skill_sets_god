@@ -7,6 +7,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-}")" 2>/dev/null && pwd || true)"
 
 HELP=0
 LIST=0
+IGNORE=0
+IGNORE_PATH=""
 BUNDLE="basic"
 POLICIES=()
 SKILLS=()
@@ -15,6 +17,8 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     -h|--help) HELP=1; shift ;;
     --list) LIST=1; shift ;;
+    --ignore) IGNORE=1; shift ;;
+    --path) IGNORE_PATH="${2:?}"; shift 2 ;;
     --bundle) BUNDLE="${2:?}"; shift 2 ;;
     --policy) POLICIES+=("${2:?}"); shift 2 ;;
     --skill) SKILLS+=("${2:?}"); shift 2 ;;
@@ -48,6 +52,11 @@ if [[ "${HELP}" -eq 1 ]]; then
 fi
 if [[ "${LIST}" -eq 1 ]]; then
   bash "${SOURCE}/scripts/show-help.sh" "${SOURCE}" list
+  exit 0
+fi
+if [[ "${IGNORE}" -eq 1 ]]; then
+  python3 "${SOURCE}/scripts/apply-ignore.py" "${SOURCE}" "${IGNORE_PATH}"
+  echo "done. reload the AI tool so ignore rules apply."
   exit 0
 fi
 

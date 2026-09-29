@@ -2,6 +2,8 @@ param(
     [Alias("h")]
     [switch]$Help,
     [switch]$List,
+    [switch]$Ignore,
+    [string]$Path = "",
     [string]$Bundle = "basic",
     [string[]]$Policy = @("safe-run"),
     [string[]]$Skill = @()
@@ -45,6 +47,13 @@ if ($Help) {
 }
 if ($List) {
     & (Join-Path $source "scripts/show-help.ps1") -SourceRoot $source -ListOnly
+    return
+}
+if ($Ignore) {
+    $ignoreArgs = @{ SourceRoot = $source }
+    if ($Path) { $ignoreArgs.TargetPath = $Path }
+    & (Join-Path $source "scripts/apply-ignore.ps1") @ignoreArgs
+    Write-Host "done. reload the AI tool so ignore rules apply."
     return
 }
 

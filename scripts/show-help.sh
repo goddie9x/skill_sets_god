@@ -8,7 +8,7 @@ if [[ "${LIST_ONLY}" != "list" ]]; then
 Skill Sets installer
 
 Usage:
-  ./install.sh [--bundle <id>] [--policy <id>[,<id>...]] [--skill <name>] [--list] [--help]
+  ./install.sh [--bundle <id>] [--policy <id>[,<id>...]] [--skill <name>] [--ignore] [--path <dir>] [--list] [--help]
   .\install.ps1 [-Bundle <id>] [-Policy <id>[,<id>...]] [-Skill <name>...] [-List] [-Help]
 
 Default: --bundle basic --policy safe-run
@@ -19,6 +19,8 @@ Examples:
   ./install.sh --policy autopilot
   ./install.sh --policy safe-test
   ./install.sh --bundle none --skill clean-programming
+  ./install.sh --ignore
+  ./install.sh --ignore --path /path/to/app
   ./install.sh --list
   ./install.sh --help
 
