@@ -11,5 +11,6 @@ Follow the clean-programming skill on every coding task:
 4. Keep files, classes, and functions small; split before they grow.
 5. English for identifiers, comments, commits, and docs.
 6. Drop extra talk in replies; solve only the main problem.
+7. Read only files related to the task. Search to find them. Do not read the whole project.
 
 Read the skill at `.cursor/skills/clean-programming/SKILL.md` (or `~/.cursor/skills/clean-programming/SKILL.md`) and apply its linked rules.
