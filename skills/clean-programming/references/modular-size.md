@@ -4,6 +4,15 @@ Small units are easier to read, cheaper to load, and cheaper for the model to ed
 
 Prefer more files over large files. The agent should open only the modules it needs.
 
+## Read scope
+
+Read only files related to the current task. Do not read the whole project.
+
+- Search first (`rg`, file name, symbol) to find the owners of the change.
+- Open those files, plus a direct caller or callee when the edit depends on it.
+- Stop when you can make the change. Do not tour unrelated folders, configs, or tests.
+- Read a test file only when the task changes or checks that behavior.
+
 ## Limits
 
 | Unit | Soft max | Hard max | Split when |
