@@ -56,7 +56,7 @@ After the first clone:
 
 | Id | Skills |
 | --- | --- |
-| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites (default) |
+| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer (default) |
 | `none` | none — pair with `-Skill` |
 
 ### Policies (clusters)
@@ -131,6 +131,7 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [pre-task-split](skills/pre-task-split/SKILL.md) | Start of a new task. List only accuracy (code-verified), judgment, and missing facts — then stop until the user confirms. |
 | [command-rights](skills/command-rights/SKILL.md) | Honor the installed policy grants for safe-run, review, commit, and push. |
 | [doc-prerequisites](skills/doc-prerequisites/SKILL.md) | Writing user-facing docs. Require overview, input validation/prerequisites, and create-if-missing refs. |
+| [token-optimizer](skills/token-optimizer/SKILL.md) | Suggest a new chat for a new task, and a cheaper model for refactor, tests, or basic logic. |
 
 ## Add another skill
 

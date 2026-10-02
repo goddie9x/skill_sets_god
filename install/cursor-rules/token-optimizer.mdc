@@ -1,0 +1,13 @@
+---
+description: Suggest a new chat for a new task, and a cheaper model for simple work.
+alwaysApply: true
+---
+
+Follow `token-optimizer`:
+
+1. If this chat already finished other work, or the user starts a different feature or bug, tell them to open a new chat. One sentence, then wait.
+2. For a refactor, tests, or basic logic, suggest a lower-cost model. Do not switch it yourself.
+
+Short replies and reading only related files stay in `clean-programming`.
+
+Read `~/.cursor/skills/token-optimizer/SKILL.md` (or `.cursor/skills/token-optimizer/SKILL.md`).
