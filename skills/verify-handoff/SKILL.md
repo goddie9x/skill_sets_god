@@ -11,6 +11,18 @@ description: >-
 
 The user verifies technical claims independently and will re-check your work. That is good — but full re-verification of already-verified work is double work. Hand over verification cleanly so a spot-check is enough.
 
+## Golden rule: test before you report
+
+**Never report work as "done" or "successful" without testing it first.** This is non-negotiable.
+
+For every task:
+1. **Make the change** — code, config, data, etc.
+2. **Test it** — run the actual verification: build, typecheck, API call, live site check, etc.
+3. **Confirm it works** — see the expected result with your own eyes/tools.
+4. **Then report** — only after steps 1-3 succeed.
+
+If you cannot test (e.g. need user action, external service down), say so explicitly: "Code xong, chưa test được vì X — bro test giúp nhé" instead of "Xong rồi!".
+
 ## When delivering verified work
 
 State three things, briefly:

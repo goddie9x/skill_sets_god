@@ -1,0 +1,12 @@
+---
+description: Always run tests after writing them; verify web apps on the live deployment.
+alwaysApply: true
+---
+
+After any code change, follow `test-run-verify`:
+
+1. Run the tests — writing test files is not testing. Report real pass counts.
+2. Web apps: verify against the live deployment, not just localhost. Confirm the deployed version, purge CDN cache for HTML entry points, test user-facing behavior in a browser.
+3. Static checks (`tsc`, lint, `node --check`) are not runtime verification — run the code in the real runtime.
+
+Read `~/.cursor/skills/test-run-verify/SKILL.md` (or `.cursor/skills/test-run-verify/SKILL.md`).

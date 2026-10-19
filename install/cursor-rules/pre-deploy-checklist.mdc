@@ -1,0 +1,14 @@
+---
+description: Before every production deploy, run the 5-line checklist (change, verify, rollback, cache, blast radius).
+alwaysApply: true
+---
+
+Before every production deploy, merge to main, or release push, follow `pre-deploy-checklist`:
+
+1. What changed? — one-line summary of what's in this deploy.
+2. How do I verify? — the exact check that proves the deploy worked.
+3. How do I roll back? — if you cannot answer this, do not deploy.
+4. Cache? — invalidate CDN/Cloudflare, service worker, ISR; purge the HTML entry points.
+5. Blast radius — who is affected if it breaks.
+
+Read `~/.cursor/skills/pre-deploy-checklist/SKILL.md` (or `.cursor/skills/pre-deploy-checklist/SKILL.md`).

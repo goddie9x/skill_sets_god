@@ -16,7 +16,7 @@ No staging server is not an excuse to skip checks. A 5-line checklist catches mo
 1. **What changed?** — one-line summary of what's in this deploy (commits, migrations, env changes).
 2. **How do I verify?** — the exact URL, command, or check that proves the deploy worked. "It should be fine" is not verification.
 3. **How do I roll back?** — the exact command or step that undoes this deploy (previous release, git revert, restart the old process).
-4. **Cache?** — what must be invalidated after deploy (CDN/Cloudflare cache, service worker, ISR). Purge the HTML entry points per the deploy cache rule.
+4. **Cache?** — what must be invalidated after deploy (CDN/Cloudflare cache, service worker, ISR — the caches of ALL related systems, not just the main one). Purge the HTML entry points per the deploy cache rule. If assets live outside the repo (e.g. gitignored `public/assets/` uploaded to the server separately), the upload is part of the deploy — do it before claiming done, never as an afterthought.
 5. **Who is affected if it breaks?** — blast radius, and whether anyone needs a heads-up before you ship.
 
 ## Rules
@@ -25,3 +25,4 @@ No staging server is not an excuse to skip checks. A 5-line checklist catches mo
 - Migrations: confirm they are backward-compatible or have a down path before deploying.
 - After deploy, run the verification from #2 immediately. Do not assume.
 - Log the deploy (what / when / result) so the next debug session starts with facts, not guesses.
+- **Clear ALL related caches yourself after every deploy — never forget.** Bro has had to clear cache by hand every time we skipped it (2026-10-15). CDN/Cloudflare + service worker + ISR + any upstream caches in the chain. Then tell bro to hard-refresh (Ctrl+Shift+R); a fix that is verified in code but still looks broken on live is usually stale cache, not a failed deploy.

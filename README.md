@@ -56,7 +56,7 @@ After the first clone:
 
 | Id | Skills |
 | --- | --- |
-| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer (default) |
+| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer, pre-deploy-checklist, verify-handoff, test-run-verify (default) |
 | `none` | none — pair with `-Skill` |
 
 ### Policies (clusters)
@@ -132,6 +132,9 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [command-rights](skills/command-rights/SKILL.md) | Honor the installed policy grants for safe-run, review, commit, and push. |
 | [doc-prerequisites](skills/doc-prerequisites/SKILL.md) | Writing user-facing docs. Require overview, input validation/prerequisites, and create-if-missing refs. |
 | [token-optimizer](skills/token-optimizer/SKILL.md) | Suggest a new chat for a new task, and a cheaper model for refactor, tests, or basic logic. |
+| [pre-deploy-checklist](skills/pre-deploy-checklist/SKILL.md) | Before every production deploy. 5-line checklist: what changed, how to verify, how to roll back, cache invalidation, blast radius. |
+| [verify-handoff](skills/verify-handoff/SKILL.md) | Handing over verified work. State what was checked, show the evidence, suggest spot-checks instead of full re-verification. |
+| [test-run-verify](skills/test-run-verify/SKILL.md) | After any code change. Always RUN tests (writing them isn't testing); verify web apps on the live deployment, not just localhost. |
 
 ## Add another skill
 

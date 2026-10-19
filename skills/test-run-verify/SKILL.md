@@ -56,9 +56,23 @@ test environment. Do not ship and hope; deploy, then verify live.
 - Anything you could not verify gets named explicitly:
   "chưa verify X vì Y" — never implied, never omitted.
 
+## Rule 3: Static checks are not runtime verification
+
+`node --check`, `tsc --noEmit`, linters — these catch syntax and types,
+not behavior. A file can pass every static check and still be broken
+at runtime (lesson 2026-10-13: `node --check` passed a bookmark-cleaner
+file that had an ESM syntax error only visible on real import).
+
+- After any static check passes, verify with the real runtime:
+  actually import/run the module, actually render the page.
+- For UI: static code review never replaces opening the real browser
+  and interacting with real mouse operations.
+
 ## Don't
 
 - Don't write tests and call it done without running them.
+- Don't treat a passing static check (`node --check`, lint) as proof
+  the code works — run it in the real runtime.
 - Don't report a pass count from before your latest edit.
 - Don't verify a web app only on localhost when a live deployment exists.
 - Don't claim "deployed successfully" from a green pipeline alone —

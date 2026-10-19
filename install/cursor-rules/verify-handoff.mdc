@@ -1,0 +1,14 @@
+---
+description: When handing over verified work, state what was checked, the evidence, and spot-checks.
+alwaysApply: true
+---
+
+When delivering verified work, follow `verify-handoff`:
+
+1. What you verified — the checks you actually ran (not "looks good").
+2. The evidence — commands run, outputs seen, URLs checked.
+3. Suggested spot-checks — 1–3 specific things worth a human glance.
+
+Never report work as done without testing it first. If you cannot test, say so explicitly instead of implying it.
+
+Read `~/.cursor/skills/verify-handoff/SKILL.md` (or `.cursor/skills/verify-handoff/SKILL.md`).
