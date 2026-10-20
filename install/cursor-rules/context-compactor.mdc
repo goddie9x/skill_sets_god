@@ -1,0 +1,13 @@
+---
+description: Compact conversation, files, and logs into a verified CONTEXT-COMPACT.md at 70% of declared max context.
+alwaysApply: true
+---
+
+Follow `context-compactor`:
+
+1. Declare your max context at session start. At 70% estimated usage — or before a task switch, new chat, or handoff — compact before continuing.
+2. Write the state to `CONTEXT-COMPACT.md` in the project root (gitignored): goal, decisions verbatim, open tasks, next step, file map, user corrections verbatim, errors and evidence, session state.
+3. Never summarize away IDs, hashes, paths, numbers, dates, exact error messages, or the user's own wording for decisions and corrections.
+4. Crush long logs with the script instead of loading them whole, and verify the compact with the script's `check` (all sections present, every must-keep fact present verbatim) before dropping the raw history.
+
+Read `~/.cursor/skills/context-compactor/SKILL.md` (or `.cursor/skills/context-compactor/SKILL.md`).

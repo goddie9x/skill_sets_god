@@ -56,7 +56,7 @@ After the first clone:
 
 | Id | Skills |
 | --- | --- |
-| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer, pre-deploy-checklist, verify-handoff, test-run-verify (default) |
+| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer, pre-deploy-checklist, verify-handoff, test-run-verify, context-compactor (default) |
 | `none` | none — pair with `-Skill` |
 
 ### Policies (clusters)
@@ -135,6 +135,7 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [pre-deploy-checklist](skills/pre-deploy-checklist/SKILL.md) | Before every production deploy. 5-line checklist: what changed, how to verify, how to roll back, cache invalidation, blast radius. |
 | [verify-handoff](skills/verify-handoff/SKILL.md) | Handing over verified work. State what was checked, show the evidence, suggest spot-checks instead of full re-verification. |
 | [test-run-verify](skills/test-run-verify/SKILL.md) | After any code change. Always RUN tests (writing them isn't testing); verify web apps on the live deployment, not just localhost. |
+| [context-compactor](skills/context-compactor/SKILL.md) | At 70% of declared max context, before a handoff or new chat. Compacts conversation, file contents, and logs into one verified, gitignored `CONTEXT-COMPACT.md` so any agent can continue without the raw history. |
 
 ## Add another skill
 

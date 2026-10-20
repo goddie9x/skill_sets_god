@@ -28,7 +28,7 @@ function Copy-AllowedTree([string]$From, [string]$To) {
 
 Copy-Item -Force $skillMd (Join-Path $DestSkillDir "SKILL.md")
 
-foreach ($folder in @("references", "scripts", "assets")) {
+foreach ($folder in @("references", "scripts", "assets", "templates")) {
     $src = Join-Path $SourceSkillDir $folder
     if (Test-Path $src) {
         Copy-AllowedTree $src (Join-Path $DestSkillDir $folder)

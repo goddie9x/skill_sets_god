@@ -2,7 +2,7 @@
   "bundles": [
     {
       "id": "basic",
-      "description": "Default set: clean programming, pre-task split, command rights, doc prerequisites, token optimizer, pre-deploy checklist, verify handoff, test run verify",
+      "description": "Default set: clean programming, pre-task split, command rights, doc prerequisites, token optimizer, pre-deploy checklist, verify handoff, test run verify, context compactor",
       "skills": [
         "clean-programming",
         "pre-task-split",
@@ -11,7 +11,8 @@
         "token-optimizer",
         "pre-deploy-checklist",
         "verify-handoff",
-        "test-run-verify"
+        "test-run-verify",
+        "context-compactor"
       ]
     },
     {

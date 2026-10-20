@@ -63,7 +63,7 @@ def sync_gemini_skill(src: Path, dest: Path) -> None:
             dest.unlink()
     dest.mkdir(parents=True, exist_ok=True)
     shutil.copy2(skill_md, dest / "SKILL.md")
-    for folder in ("references", "scripts", "assets"):
+    for folder in ("references", "scripts", "assets", "templates"):
         sub = src / folder
         if sub.is_dir():
             copy_allowed_tree(sub, dest / folder)
