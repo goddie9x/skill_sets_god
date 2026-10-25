@@ -19,6 +19,20 @@ No staging server is not an excuse to skip checks. A 5-line checklist catches mo
 4. **Cache?** — what must be invalidated after deploy (CDN/Cloudflare cache, service worker, ISR — the caches of ALL related systems, not just the main one). Purge the HTML entry points per the deploy cache rule. If assets live outside the repo (e.g. gitignored `public/assets/` uploaded to the server separately), the upload is part of the deploy — do it before claiming done, never as an afterthought.
 5. **Who is affected if it breaks?** — blast radius, and whether anyone needs a heads-up before you ship.
 
+## Production gate (AI-native SDLC)
+
+The agent prepares the release; a human authorizes it. The agent may
+act up to the production gate and nothing past it: no deploy to
+production, no irreversible migration, no config change to a live
+system without the named human's go-ahead in that turn. Tier the
+autonomy by environment — freer in development, stricter in staging,
+gated in production — and state which tier this deploy is in.
+
+Rollback is the most rehearsed path in the pipeline, not a paragraph
+in a runbook: one command that undoes this deploy, proven before it
+is needed (ideally exercised in staging). If the rollback command has
+never been run, the deploy is not ready.
+
 ## Rules
 
 - If you cannot answer #3 (rollback), do not deploy. Fix that first.

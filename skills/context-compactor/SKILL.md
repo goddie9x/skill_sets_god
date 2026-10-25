@@ -98,6 +98,12 @@ catch a bad compact immediately. If a needed fact is missing, go back to
 the original source for that fact only — never reload the whole history
 "to be safe".
 
+A bug or incident report that arrives after a compact does not restart
+the conversation from scratch: it re-enters as a new goal in section 1
+(a fresh `intent.md` in playbook terms), with its evidence in section 7,
+and goes through the same pipeline — plan, diff, review — as any other
+task. The compact file is how the loop closes instead of looping.
+
 ## What must never be summarized away
 
 - Identifiers: IDs, commit hashes, paths, URLs, config keys, port numbers.

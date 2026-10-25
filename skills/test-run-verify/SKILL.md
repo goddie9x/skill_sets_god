@@ -68,6 +68,38 @@ file that had an ESM syntax error only visible on real import).
 - For UI: static code review never replaces opening the real browser
   and interacting with real mouse operations.
 
+## Rule 4: The feedback loop (AI-native SDLC)
+
+Every session checks its own work before a human sees it. Before
+coding, state a quantifiable proof target so the work can be checked
+without asking the user: "all tests in X pass", "the endpoint returns
+200 with the new field", "the screenshot matches the approved mock".
+
+- **Bugfix = failing test first.** Reproduce the bug as a test, run
+  it, confirm it fails for the reason you expect, commit it. Only then
+  make it pass — and never edit the test to make it pass.
+- **Protect the loop itself.** An agent fixing code must not be able
+  to weaken the check on that code. Do not edit test files during a
+  fix task unless the task itself is the test; if a check must change,
+  say so explicitly and let the reviewer decide.
+- **UI work = visual loop.** Implement, screenshot, compare against
+  the mock, adjust. Two or three rounds is normal; the result should
+  improve each round, not just change.
+- **Final check in fresh context.** When the stakes are high, the last
+  verification comes from a fresh subagent or session that did not
+  write the code: it runs the app, checks the changed behavior and the
+  nearest neighboring flows, and reports only — it does not fix. A
+  verdict colored by the assumptions that produced the code is not a
+  verdict.
+
+## Rule 5: Close the loop
+
+A production incident or a repeat failure does not end at the fix. It
+re-enters the pipeline as a new task: write the diagnosis down, add a
+regression test that would have caught it, and record the lesson in
+the project's institutional-knowledge file (see `clean-programming`).
+A bug fixed without its regression test is a bug waiting to return.
+
 ## Don't
 
 - Don't write tests and call it done without running them.

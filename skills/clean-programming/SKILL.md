@@ -24,6 +24,35 @@ Apply these rules on every coding task in the current project.
 
 If a project convention is stricter, follow the project. If it is looser, follow this skill.
 
+## Institutional knowledge (AI-native SDLC)
+
+Project conventions live in a file the agent reads at the start of every
+session (`AGENTS.md` / `CLAUDE.md` at the repo root), not in chat
+history. Keep it under a page: commands, conventions that matter,
+architecture, and the mistakes the agent keeps making — anything stale
+is context spent for no benefit. Rules:
+
+- **Twice rule:** when the agent makes the same mistake twice, the
+  correction goes into that file, in the same turn if possible.
+- **Versioned like code:** changes to it are reviewed like code, and
+  the file travels with the repo so every session shares one version.
+- **Skills are not the file:** a skill is for knowledge that must be
+  applied consistently across tasks; the project file is for this
+  project's working knowledge. Do not duplicate one into the other.
+
+## Parallel work
+
+- Split independent work into parallel sessions or subagents, each on
+  its own branch/worktree. Tasks that share files run sequentially in
+  one session — parallel sessions colliding on files is not parallelism,
+  it is a merge conflict with extra steps.
+- The ceiling is review capacity: start with 2–3 streams and add more
+  only while review is keeping up. A stream nobody reviews properly is
+  output, not progress.
+- Repeated jobs become scoped subagents with their own context and tool
+  limits (e.g. a verifier that runs the app and reports, without
+  fixing) — see `test-run-verify`.
+
 ## Workflow
 
 1. Search for the files that own the change. Read only those files. Create a new small module if none fits.

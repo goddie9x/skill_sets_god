@@ -22,6 +22,28 @@ If that file is missing, treat grants as `safe-commands` only.
 - No commit of secrets (`.env`, keys, credentials).
 - Ask once before any unsafe command, even when grants are on.
 
+## Skills advise, checks enforce (AI-native SDLC)
+
+A skill is an advisory control: it makes the agent likely to follow a
+policy while writing code, but nothing forces a session to comply with
+it. A policy that must always hold needs a deterministic layer behind
+the skill — a script, a hook, or a review pass that re-checks it.
+Apply that split deliberately:
+
+- **Advisory (skill text is enough):** conventions, style, preferred
+  patterns — violations are visible in review and cheap to fix.
+- **Enforced (script/hook/check required):** protected paths that must
+  not be edited, secrets that must not enter a diff, test files during
+  a fix task, production gates. If no check exists yet, say so and
+  propose one instead of pretending the skill text enforces it.
+- **A block must explain itself.** When a check stops an action, the
+  message must name the rule and the route to approval — a silent or
+  cryptic block just gets worked around.
+- **Approval prompts belong at gates, not in the inner loop.** A
+  prompt on every edit puts a human back on the critical path of every
+  session. Reserve human approval for the deploy/production gate (see
+  `pre-deploy-checklist`).
+
 ## Deploy pipeline and production behavior (learned 2026-10-06, my-digital-space incident)
 
 - **CI/workflow files are off-limits without explicit permission.** Never modify

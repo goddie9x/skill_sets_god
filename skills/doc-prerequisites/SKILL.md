@@ -20,6 +20,23 @@ Every feature section must include all of:
 
 Details: [structure.md](references/structure.md). Examples: [examples.md](references/examples.md).
 
+## Spec docs: flagged concerns and open questions (AI-native SDLC)
+
+A spec or design doc is not finished when it reads smoothly — it is
+finished when a reader can see what is still uncertain. When writing
+or editing a spec:
+
+- **Flag concerns in the doc itself**, especially where policies
+  contradict each other or a requirement cannot be satisfied as
+  written. Do not silently resolve a contradiction in favor of one
+  policy; name both and route the decision to the policy owner.
+- **Carry open questions forward** from the intent into the spec and
+  from the spec into the plan, marked as open until answered. A
+  question that disappears from the docs without an answer will
+  reappear as rework after build starts.
+- **Record what the spec is checked against**: the intent it came
+  from, and the plan it will be checked against in review.
+
 ## Hard stops
 
 - Do not ship a feature doc that only describes the happy path.

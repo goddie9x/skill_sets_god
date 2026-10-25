@@ -136,6 +136,20 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [verify-handoff](skills/verify-handoff/SKILL.md) | Handing over verified work. State what was checked, show the evidence, suggest spot-checks instead of full re-verification. |
 | [test-run-verify](skills/test-run-verify/SKILL.md) | After any code change. Always RUN tests (writing them isn't testing); verify web apps on the live deployment, not just localhost. |
 | [context-compactor](skills/context-compactor/SKILL.md) | At 70% of declared max context, before a handoff or new chat. Compacts conversation, file contents, and logs into one verified, gitignored `CONTEXT-COMPACT.md` so any agent can continue without the raw history. |
+| [ai-native-sdlc-optional](skills/ai-native-sdlc-optional/SKILL.md) | **Optional, not in `basic`.** The enterprise half of Anthropic's AI-native SDLC playbook: formal intent/spec/plan chain, continuous evals in CI, managed review, managed settings, pipeline agents, metric bands. Install with `--skill ai-native-sdlc-optional`. The portable half is already sprinkled into the basic skills. |
+
+## Optional skills
+
+Skills not in `basic` are opt-in — they need infrastructure or budget
+the default install cannot assume. Install one alongside the bundle:
+
+```bash
+./install.sh --bundle basic --skill ai-native-sdlc-optional
+```
+
+```powershell
+.\install.ps1 -Bundle basic -Skill ai-native-sdlc-optional
+```
 
 ## Add another skill
 

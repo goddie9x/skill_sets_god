@@ -1,0 +1,12 @@
+---
+description: Enterprise half of Anthropic's AI-native SDLC playbook (optional, not in the basic bundle).
+alwaysApply: true
+---
+
+Follow `ai-native-sdlc-optional` only when it is installed:
+
+1. The portable half of the playbook already lives in the basic skills — do not duplicate it.
+2. Formal intent/spec/plan files for every change, continuous evals in CI, managed PR review, managed hook settings, non-interactive pipeline agents, and deterministic metric bands are opt-in: check the infrastructure and budget prerequisites in the skill before enabling any of them.
+3. Adoption order: intent → spec → plan → feedback loop → PR review → hooks as gates → CI/CD agents → closing the loop. Never automate through a gate that does not exist yet.
+
+Read `~/.cursor/skills/ai-native-sdlc-optional/SKILL.md` (or `.cursor/skills/ai-native-sdlc-optional/SKILL.md`).

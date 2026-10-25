@@ -44,6 +44,27 @@ Skip the list only when the user is clearly continuing an already-split task (co
 - Judgment items: write them yourself.
 - If a new gap appears, list it and stop again.
 
+## Artifact chain (AI-native SDLC, light form)
+
+The split above is the intent. For a non-trivial task, do not jump from
+it straight to code — the next artifact is a short plan, then the diff:
+
+1. **Intent** — this split (accuracy / judgment / missing), approved by
+   the user.
+2. **Plan** — before coding, name the files that change, the order of
+   work, and the proof that will show it works. For a small task the
+   plan can live in the reply; for a large or risky task, write it as a
+   file (`plan.md`) the user can approve. Iterate until a stranger
+   could implement from the plan alone.
+3. **Diff + tests** — implement the plan, not a new idea mid-flight.
+4. **Review findings** — checked against the plan and the original
+   intent, not just against the diff.
+
+When implementation departs from the plan, update the plan in the same
+turn (or the same commit) — a stale plan is worse than no plan, because
+the reviewer will check the wrong thing. A trivial single-file fix does
+not need a separate plan file; the split list itself is the plan.
+
 ## Reply shape
 
 ```markdown
