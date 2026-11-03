@@ -1,0 +1,13 @@
+---
+description: Read code and docs with a token-saving ladder instead of reading the whole project.
+alwaysApply: true
+---
+
+Follow `read-ladder`:
+
+1. State the requirement in one sentence before touching the tree.
+2. Climb: dir tree → file tree → 1–3 relevant dirs (named explicitly) → relevant files → read. Use the script for the cheap rungs.
+3. Files at or under 200 lines may be read directly; larger files get symbols/head triage first, then targeted sections.
+4. Follow refs/imports one justified hop at a time, only when going deeper is needed. Never fan out blindly.
+
+Read `~/.cursor/skills/read-ladder/SKILL.md` (or `.cursor/skills/read-ladder/SKILL.md`).

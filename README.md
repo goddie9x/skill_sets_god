@@ -56,7 +56,7 @@ After the first clone:
 
 | Id | Skills |
 | --- | --- |
-| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer, pre-deploy-checklist, verify-handoff, test-run-verify, context-compactor (default) |
+| `basic` | clean-programming, pre-task-split, command-rights, doc-prerequisites, token-optimizer, pre-deploy-checklist, verify-handoff, test-run-verify, context-compactor, read-ladder (default) |
 | `none` | none — pair with `-Skill` |
 
 ### Policies (clusters)
@@ -136,6 +136,7 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [verify-handoff](skills/verify-handoff/SKILL.md) | Handing over verified work. State what was checked, show the evidence, suggest spot-checks instead of full re-verification. |
 | [test-run-verify](skills/test-run-verify/SKILL.md) | After any code change. Always RUN tests (writing them isn't testing); verify web apps on the live deployment, not just localhost. |
 | [context-compactor](skills/context-compactor/SKILL.md) | At 70% of declared max context, before a handoff or new chat. Compacts conversation, file contents, and logs into one verified, gitignored `CONTEXT-COMPACT.md` so any agent can continue without the raw history. |
+| [read-ladder](skills/read-ladder/SKILL.md) | Read code and docs with a token-saving ladder: requirement → dir tree → file tree → relevant dirs → relevant files → read, following refs/imports one justified hop at a time. Never read the whole project for a small change. |
 | [ai-native-sdlc-optional](skills/ai-native-sdlc-optional/SKILL.md) | **Optional, not in `basic`.** The enterprise half of Anthropic's AI-native SDLC playbook: formal intent/spec/plan chain, continuous evals in CI, managed review, managed settings, pipeline agents, metric bands. Install with `--skill ai-native-sdlc-optional`. The portable half is already sprinkled into the basic skills. |
 | [independent-review](skills/independent-review/SKILL.md) | **Optional, not in `basic`.** Before reporting a deliverable done, have a separate independent subagent review and test it from scratch — never self-certify. Install with `--skill independent-review`. Where multi-agent is unavailable, falls back to a deliberate fresh-pass self-review. |
 
