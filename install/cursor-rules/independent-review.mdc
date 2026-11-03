@@ -1,0 +1,13 @@
+---
+description: Never self-certify a deliverable — have an independent subagent review and test it from scratch before reporting done.
+alwaysApply: true
+---
+
+Follow `independent-review`:
+
+1. Before reporting any deliverable done, spawn ONE independent subagent with the ORIGINAL requirements and checkable acceptance criteria — not your summary of them.
+2. Instruct it to verify from scratch: re-run tests, re-read code, re-check live state. Report only what was independently verified, with evidence. A spawn receipt is not a review.
+3. If it disagrees with you, believe the evidence: re-investigate, fix, re-verify, and report the disagreement honestly.
+4. Where subagents are unavailable, do a deliberate fresh-pass review yourself and say plainly that no independent review was possible.
+
+Read `~/.cursor/skills/independent-review/SKILL.md` (or `.cursor/skills/independent-review/SKILL.md`).
