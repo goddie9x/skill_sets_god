@@ -1,0 +1,13 @@
+---
+description: Design vocabulary for agents — steer, critique, audit and polish UI; catch AI slop before it ships.
+alwaysApply: true
+---
+
+When designing, redesigning, critiquing or polishing any frontend interface, follow `impeccable`:
+
+1. Name a command and a target: `/impeccable critique the pricing cards`, `/impeccable bolder the hero`, `/impeccable polish settings`. Narrow targets beat whole-page glances.
+2. Steer: `bolder`, `quieter`, `distill`, `colorize`, `typeset`, `layout`, `animate`, `delight`, `overdrive`. Review: `critique` (scored UX), `audit` (a11y/perf/theming/responsive, P0–P3). Finish: `polish`, `harden`, `clarify`, `adapt`, `optimize`, `onboard`.
+3. Run the slop detector on UI edits before calling the work done: 62 deterministic rules flag AI tells (AI beige, italic serif accents, purple-blue gradients, Inter-for-everything, pill-button defaults). Zero findings before handoff.
+4. Verify by looking at the rendered result at the sizes it ships at; fix what one look shows before looking again.
+
+Read `~/.cursor/skills/impeccable/SKILL.md` (or `.cursor/skills/impeccable/SKILL.md`).

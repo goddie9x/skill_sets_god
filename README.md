@@ -139,6 +139,8 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [read-ladder](skills/read-ladder/SKILL.md) | Read code and docs with a token-saving ladder: requirement → dir tree → file tree → relevant dirs → relevant files → read, following refs/imports one justified hop at a time. Never read the whole project for a small change. |
 | [ai-native-sdlc-optional](skills/ai-native-sdlc-optional/SKILL.md) | **Optional, not in `basic`.** The enterprise half of Anthropic's AI-native SDLC playbook: formal intent/spec/plan chain, continuous evals in CI, managed review, managed settings, pipeline agents, metric bands. Install with `--skill ai-native-sdlc-optional`. The portable half is already sprinkled into the basic skills. |
 | [independent-review](skills/independent-review/SKILL.md) | **Optional, not in `basic`.** Before reporting a deliverable done, have a separate independent subagent review and test it from scratch — never self-certify. Install with `--skill independent-review`. Where multi-agent is unavailable, falls back to a deliberate fresh-pass self-review. |
+| [impeccable](skills/impeccable/SKILL.md) | **Optional, not in `basic`.** Design vocabulary for coding agents (v4.8.0): steer UI with 24 commands (`polish`, `bolder`, `critique`, `audit`...), catch AI slop with 62 deterministic detector rules before it ships. Install with `--skill impeccable`. |
+| [design-taste-frontend](skills/design-taste-frontend/SKILL.md) | **Optional, not in `basic`.** Anti-slop frontend skill (tasteskill v2): art direction distilled from 247 curated gallery sites, researched design directions, strict no-slop house style, look-and-fix loop on real screenshots. Install with `--skill design-taste-frontend`. |
 
 ## Optional skills
 

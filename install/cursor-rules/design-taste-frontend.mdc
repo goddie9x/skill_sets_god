@@ -1,0 +1,13 @@
+---
+description: Anti-slop frontend skill — art direction from 247 curated sites, researched directions, strict house style, look-and-fix loop.
+alwaysApply: true
+---
+
+When building, redesigning, restyling or polishing a landing page, marketing site, portfolio, dashboard or admin screen, follow `design-taste-frontend`:
+
+1. Inventory first: list what only this client has — name, numbers, constraints, materials. No generic brief, no templated output.
+2. Draw: run `scripts/draw.mjs` to deal three of the 20 researched directions; pick the one that carries the inventory, then build from the sheet — words first, full content.
+3. Enforce the no-slop house style: no eyebrow labels, no monospace captions, no 01/02/03 numbering, no thin rules, no gradients, no resting shadows, no cream-and-terracotta, no violet.
+4. Gate: run `scripts/lint.mjs` and `scripts/inspect.mjs`, look at the real screenshots, critique with the rubric, fix the top three problems — at most three rounds.
+
+Read `~/.cursor/skills/design-taste-frontend/SKILL.md` (or `.cursor/skills/design-taste-frontend/SKILL.md`).
