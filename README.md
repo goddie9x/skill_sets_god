@@ -140,6 +140,7 @@ Add a bundle in `install/bundles.json`. Add a policy cluster in `install/policie
 | [ai-native-sdlc-optional](skills/ai-native-sdlc-optional/SKILL.md) | **Optional, not in `basic`.** The enterprise half of Anthropic's AI-native SDLC playbook: formal intent/spec/plan chain, continuous evals in CI, managed review, managed settings, pipeline agents, metric bands. Install with `--skill ai-native-sdlc-optional`. The portable half is already sprinkled into the basic skills. |
 | [independent-review](skills/independent-review/SKILL.md) | **Optional, not in `basic`.** Before reporting a deliverable done, have a separate independent subagent review and test it from scratch — never self-certify. Install with `--skill independent-review`. Where multi-agent is unavailable, falls back to a deliberate fresh-pass self-review. |
 | [impeccable](skills/impeccable/SKILL.md) | **Optional, not in `basic`.** Design vocabulary for coding agents (v4.8.0): steer UI with 24 commands (`polish`, `bolder`, `critique`, `audit`...), catch AI slop with 62 deterministic detector rules before it ships. Install with `--skill impeccable`. |
+| [humanize-content](skills/humanize-content/SKILL.md) | **Optional, not in `basic`.** Write or rewrite reader-facing content so it reads like a specific person wrote it: banned AI vocabulary and template structures, varied rhythm, concrete detail, a real opinion, and a trade-off; never invents facts. Triggers ONLY on explicit content-writing requests. Install with `--skill humanize-content`. |
 
 ## Optional skills
 

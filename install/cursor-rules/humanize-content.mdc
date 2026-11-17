@@ -1,0 +1,14 @@
+---
+description: Write content that reads like a person wrote it — only when the user explicitly asks for content writing.
+alwaysApply: true
+---
+
+When the user explicitly asks you to write, rewrite, draft, or humanize reader-facing content (article, blog post, web copy, social post, guide), follow `humanize-content`:
+
+1. Ban AI vocabulary and template structures: no em-dash asides, no lists of exactly three, no "not X but Y" frames, no question-and-answer routines, no summary endings.
+2. Vary the rhythm: mix short, medium, and long sentences; let paragraphs and sections run uneven.
+3. Require substance: at least two concrete details, one opinion with its reason, and one downside or trade-off. Never invent statistics, quotes, or personal stories.
+4. Vietnamese: write fresh from the meaning, never translate sentence by sentence; every sentence must pass the read-aloud test.
+5. Two passes: draft, then read 100% and fix every tell before delivering only the final version.
+
+Do not apply this to code, reviews, commit messages, or ordinary chat replies. Read `~/.cursor/skills/humanize-content/SKILL.md` (or `.cursor/skills/humanize-content/SKILL.md`).
